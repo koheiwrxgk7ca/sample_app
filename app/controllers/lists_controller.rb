@@ -15,9 +15,11 @@ class ListsController < ApplicationController
   end
   
   def index
+    @lists = List.all
   end
 
   def shou
+    @list = List.find(params[:])
   end
 
   def edit
