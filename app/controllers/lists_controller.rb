@@ -3,7 +3,7 @@ class ListsController < ApplicationController
     # Viewへ渡すためのインスタンス変数に空のModelオブジェクトを生成する。
     @list = List.new
   end
-  
+
   # 以下を追加
   def create
     # １.&2. データを受け取り新規登録するためのインスタンス作成
@@ -11,20 +11,20 @@ class ListsController < ApplicationController
     # 3. データをデータベースに保存するためのsaveメソッド実行
     list.save
     # 4. トップ画面へリダイレクト
-    redirect_to '/top'
+    redirect_to list_path(list.id)
   end
-  
+
   def index
     @lists = List.all
   end
 
-  def shou
-    @list = List.find(params[:])
+  def show
+    @list = List.find(params[:id])
   end
 
   def edit
   end
-    
+
   private
   # ストロングパラメータ
   def list_params
