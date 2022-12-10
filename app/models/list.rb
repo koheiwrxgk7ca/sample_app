@@ -3,5 +3,8 @@ class List < ApplicationRecord
   
   validates :title, presence: true
   validates :body, presence: true
+  
+   # コメントアウトする(rails cの)
   validates :image, presence: true
+  
 end
